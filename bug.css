@@ -1,0 +1,14 @@
+The following CSS code snippet exhibits unexpected behavior in some browsers due to a common mistake in selector specificity:
+
+```css
+div p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+In this example, the more specific selector `div p` should override the less specific selector `p`. However, depending on the browser's CSS parser and the surrounding HTML structure, the `p` selector might sometimes unexpectedly take precedence, resulting in red text even when the paragraph is nested within a `div`. This occurs due to variations in how browsers handle cascading and selector specificity, often related to how the parser interprets the order and weight of selectors.
+
+This issue can be resolved by increasing the specificity of the `div p` selector or by ensuring that the order of CSS rules within the stylesheet correctly reflects the desired cascading behavior.
