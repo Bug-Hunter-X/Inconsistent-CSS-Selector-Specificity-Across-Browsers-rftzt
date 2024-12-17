@@ -1,0 +1,12 @@
+The solution involves making the `div p` selector even more specific to ensure it overrides the `p` selector in all browsers:
+
+```css
+div > p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+By using the `>` (child combinator), we explicitly target `p` elements that are direct children of `div` elements, thus increasing the specificity.  Alternatively, you could use more specific selectors or change the order of the rules so that the `div p` rule appears after the `p` rule.
